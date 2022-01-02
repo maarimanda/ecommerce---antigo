@@ -38,13 +38,6 @@ class Page {
 
 	}
 
-	public function __destruct()
-	{
-
-		if ($this->options['footer'] === true) $this->tpl->draw("footer", false);
-
-	}
-
 	private function setData($data = array())
 	{
 
@@ -56,6 +49,14 @@ class Page {
 		}
 
 	}
+
+	public function __destruct()
+	{
+
+		if ($this->options['footer'] === true) $this->tpl->draw("footer", false);
+
+	}
+
 
 	public function setTpl($tplname, $data = array(), $returnHTML = false)
 	{
